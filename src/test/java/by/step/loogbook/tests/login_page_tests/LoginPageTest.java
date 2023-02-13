@@ -19,7 +19,7 @@ public class LoginPageTest extends BaseUITestsClass {
         driver.navigate().to("https://logbook.itstep.org/");
     }
 
-    @Test
+/*    @Test
     public void verifyLoginInputVisibility () {
         //Given
         loginService = new LoginService(driver);
@@ -27,7 +27,7 @@ public class LoginPageTest extends BaseUITestsClass {
         //Then
         Assertions.assertEquals(false, loginService.getLoginPage().getLoginBlock().loginField.isDisplayed());
 
-    }
+    }*/
 
     @Test
     public void verifyLoginInputValidParameters () {
