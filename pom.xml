@@ -15,12 +15,6 @@
     </properties>
 
     <dependencies>
-        <!--        <dependency>
-                    <groupId>org.seleniumhq.selenium</groupId>
-                    <artifactId>selenium-chrome-driver</artifactId>
-                    <version>4.8.0</version>
-                </dependency>-->
-
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
@@ -42,8 +36,25 @@
     </dependencies>
 
     <build>
-        <testSourceDirectory>${project.basedir}/src/test</testSourceDirectory>
+        <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M6</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>5.6.2</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
